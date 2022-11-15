@@ -10,14 +10,14 @@ setInterval(() => {
 const caracteresUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const caracteresLowercase = 'abcdefghijklmnopqrstuvwxyz'
 const number = '0123456789'
-const symbols = '@*!#?%&$()'
+const symbols = '~`!@#$%^&*()_-+={[}]|;"'
 let length
 
 function gerarSenha() {
     let caracteres = ''
 
     for(let x = 0; x < 4; x++) {
-        let checkRequirements = document.querySelectorAll('.config:checked')[x]
+        let checkRequirements = document.querySelectorAll('.config-caractere:checked')[x]
 
         if(checkRequirements){
             if(checkRequirements.value == 'caracteresUppercase') {

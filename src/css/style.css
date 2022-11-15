@@ -1,0 +1,143 @@
+body {
+    height: 100vh;
+    background-color: #08070C;
+    color: #D7D6DD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Domine', serif;
+    font-size: 1.6rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.main-container h1 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.container-senha {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.senha-aleatoria {
+    background-color: #24232A;
+    color: #D7D6DD;
+    height: 50px;
+    width: 80%;
+    outline: none;
+    font-size: 2.5rem;
+    padding: 0 15px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.copy-text {
+    width: 20%;
+    background-color: #24232A;
+    color: #A4FCAF;
+    font-size: 2rem;
+    border-top-right-radius: 8px;
+   border-bottom-right-radius: 8px;
+}
+
+.configuracoes {
+    background-color: #24232A;
+    padding: 20px 20px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.texto-configuracoes {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 15px;
+}
+
+.range .texto-range {
+    font-size: 2rem;
+}
+
+.range .range-slide {
+    width: 100%;
+    appearance: none;
+    height: 3px;
+    background-color: #335538;
+    outline: none;
+    opacity: .7;
+    transition: .2s;
+    transition: .2s;
+}
+
+.range .range-slide:hover {
+    opacity: 1;
+}
+
+.range .range-slide::-webkit-slider-thumb {
+    appearance: none;
+    height: 25px;
+    width: 25px;
+    background-color: #b7f6bf;
+    border-radius: 50%;
+}
+
+.range .range-slide::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-color: #b7f6bf;
+}
+
+.tipo-de-caracteres {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.tipo-de-caracteres > label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.config-caractere {
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background-color:#D7D6DD;
+    border-radius: 50%;
+}
+
+.config-caractere:checked {
+    background-color: #6de97e;
+}
+
+.botao {
+    margin-top: 15px;
+    width: 80%;
+    height: 50px;
+    background-color: #6de97e;
+    font-family: 'Domine', serif;
+    font-size: 2rem;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 3px #000000 ;
+    border-radius: 5px;
+}

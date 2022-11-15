@@ -6,44 +6,58 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./src/css/reset.css">
+        <link rel="stylesheet" href="./src/css/style.css">
+        <link rel="stylesheet" href="./src/css/responsive.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;700&display=swap" rel="stylesheet">
     </head>
 
     <body>
+        <div class="main-container">
+            <h1>Gerador de Senhas Aleatórias</h1>
 
-        <h1>Gerador de Senhas Aleatórias</h1>
+            <div class="container-senha">
+                <input type="text" class="senha-aleatoria" id="senha-aleatoria">
+                </input>
 
-        <div class="container-senha">
-            <input type="text" class="senha-aleatoria" id="senha-aleatoria">
-            </input>
+                <button class="copy-text" id="copy-text" onclick="copy()">
+                    <i class="fa-regular fa-copy"></i>
+                </button>
+            </div>
 
-            <button class="copy-text" id="copy-text" onclick="copy()">Copiar</button>
+            <div class="configuracoes">
+                <p class="texto-configuracoes">Comprimento de Senha</p>
+
+                <div class="range">
+                    <p id="range-number" class="texto-range">8</p><input type="range" name="range" min="4" max="16" value="8" id="quantidade-caracteres" class="range-slide">
+                </div>
+
+                <div class="tipo-de-caracteres">
+                    <label>
+                        <p>Maiúsculas:</p> <input type="checkbox" class="config-caractere" value="caracteresUppercase" checked>
+                    </label>
+
+                    <label>
+                        <p>Minúsculas:</p> <input type="checkbox" class="config-caractere" value="caracteresLowercase">
+                    </label>
+
+                    <label>
+                        <p>Números:</p> <input type="checkbox" class="config-caractere" value="number" checked>
+                    </label>
+
+                    <label>
+                        <p>Símbolos:</p> <input type="checkbox" class="config-caractere" value="symbols">
+                    </label>
+                </div>
+
+                <button onclick="gerarSenha()" class="botao">Gerar Senha</button>
+            </div>
         </div>
 
-        <div class="range-opt">
-            <p id="range-number">8</p><input type="range" name="range" min="4" max="10" value="8" id="quantidade-caracteres" class="range">
-        </div>
-
-        <button onclick="gerarSenha()">Gerar Senha</button>
-
-        <div class="options">
-            <label>
-                Maiúsculas: <input type="checkbox" class="config" value="caracteresUppercase" checked>
-            </label>
-
-            <label>
-                Minúsculas: <input type="checkbox" class="config" value="caracteresLowercase">
-            </label>
-
-            <label>
-                Números: <input type="checkbox" class="config" value="number" checked>
-            </label>
-
-            <label>
-                Símbolos: <input type="checkbox" class="config" value="symbols">
-            </label>
-        </div>
-
-        <script src="script.js"></script>
+        <script src="./src/js/script.js"></script>
+        <script src="https://kit.fontawesome.com/fa140352f1.js" crossorigin="anonymous"></script>
     </body>
 </html>
