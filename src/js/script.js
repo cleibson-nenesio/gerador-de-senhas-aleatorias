@@ -62,7 +62,14 @@ function gerarSenha() {
 
 function copy() {
     let copyText = divSenha.value
+    let copyNotification = document.getElementById('copy-notification')
     navigator.clipboard.writeText(copyText)
+
+    copyNotification.classList.toggle('hidden')
+
+    setTimeout(() => {
+        copyNotification.classList.toggle('hidden')
+    }, 1500)
 
     icon.innerHTML = `<i class="fas fa-check"></i>`
 }

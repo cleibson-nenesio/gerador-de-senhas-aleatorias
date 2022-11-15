@@ -15,11 +15,30 @@ body {
     justify-content: center;
     align-items: center;
     max-width: 500px;
+    position: relative;
 }
 
 .main-container h1 {
     font-size: 2rem;
     margin-bottom: 30px;
+}
+
+.notificacao-de-copiado {
+    height: 30px;
+    width: 100px;
+    background-color: #24232A;
+    box-shadow: 0px 0px 8px -12px rgba(0, 0, 0, .75);
+    position: absolute;
+    top: 100px;
+    right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none;
 }
 
 .container-senha {
