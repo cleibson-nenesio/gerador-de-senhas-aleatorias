@@ -1,5 +1,13 @@
 const divSenha = document.getElementById('senha-aleatoria')
 const icon = document.getElementById('copy-text')
+const theme = document.body
+const switchThemeDot = document.querySelectorAll('.slider')[0]
+
+function changeTheme() {
+    switchThemeDot.classList.toggle('active')
+    theme.classList.toggle('light-mode')
+}
+
 let quantiaCaracteres
 
 setInterval(() => {

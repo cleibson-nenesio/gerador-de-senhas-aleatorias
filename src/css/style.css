@@ -1,12 +1,51 @@
 body {
     height: 100vh;
-    background-color: #08070C;
-    color: #D7D6DD;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Domine', serif;
     font-size: 1.6rem;
+    background-color: #08070C;
+    color: #D7D6DD;
+}
+
+.switch-theme {
+    appearance: none;
+    height: 25px;
+    width: 50px;
+    background-color: #252428;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    border-radius: 35px;
+}
+
+.slider {
+    position: absolute;
+    top: 51.5px;
+    right: 35px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    z-index: 0;
+}
+
+.active {
+    right: 55px;
+}
+
+.light-mode {
+    background-color: #D7D6DD;
+    color: #08070C;
+}
+
+.light-mode .senha-aleatoria,
+.light-mode .configuracoes,
+.light-mode .copy-text {
+    background-color: #8b8a90;
+    color: #08070C;
 }
 
 .main-container {
