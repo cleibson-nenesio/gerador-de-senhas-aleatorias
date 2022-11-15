@@ -1,4 +1,5 @@
 const divSenha = document.getElementById('senha-aleatoria')
+const icon = document.getElementById('copy-text')
 let quantiaCaracteres
 
 setInterval(() => {
@@ -14,6 +15,8 @@ const symbols = '~`!@#$%^&*()_-+={[}]|;"'
 let length
 
 function gerarSenha() {
+    icon.innerHTML = `<i class="fa-regular fa-copy"></i>`
+
     let caracteres = ''
 
     for(let x = 0; x < 4; x++) {
@@ -59,11 +62,9 @@ function gerarSenha() {
 
 function copy() {
     let copyText = divSenha.value
-    console.log(copyText)
-
     navigator.clipboard.writeText(copyText)
 
-    alert('Copiado')
+    icon.innerHTML = `<i class="fas fa-check"></i>`
 }
 
 gerarSenha()
