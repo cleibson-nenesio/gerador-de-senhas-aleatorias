@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <h1>Gerador de Senhas Aleatórias</h1>
+
+        <div class="senha-aleatoria" id="senha-aleatoria">
+            <p>Selecione uma preferência</p>
+        </div>
+
+        <div class="range-opt">
+            <p id="range-number">8</p><input type="range" name="range" min="4" max="16" value="8" id="quantidade-caracteres" class="range">
+        </div>
+
+        <button onclick="gerarSenha()">Gerar Senha</button>
+
+        <div class="options">
+            <label>
+                Maiúsculas: <input type="checkbox" class="config" value="caracteresUppercase">
+            </label>
+
+            <label>
+                Minúsculas: <input type="checkbox" class="config" value="caracteresLowercase">
+            </label>
+
+            <label>
+                Números: <input type="checkbox" class="config" value="number">
+            </label>
+
+            <label>
+                Símbolos: <input type="checkbox" class="config" value="symbols">
+            </label>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
