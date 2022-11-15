@@ -50,11 +50,20 @@ function gerarSenha() {
 
         if(caracteres[randomNumber]) {
             password += caracteres[randomNumber]
-            divSenha.innerHTML = `${password}`
+            divSenha.value = `${password}`
         }else {
-            divSenha.innerHTML = `<p>Selecione uma preferência</p>`
+            divSenha.value = `Selecione uma preferência`
         }
     }
+}
+
+function copy() {
+    let copyText = divSenha.value
+    console.log(copyText)
+
+    navigator.clipboard.writeText(copyText)
+
+    alert('Copiado')
 }
 
 gerarSenha()

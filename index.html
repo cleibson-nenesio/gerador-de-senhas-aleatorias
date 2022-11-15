@@ -13,8 +13,11 @@
 
         <h1>Gerador de Senhas Aleatórias</h1>
 
-        <div class="senha-aleatoria" id="senha-aleatoria">
-            <p>Selecione uma preferência</p>
+        <div class="container-senha">
+            <input type="text" class="senha-aleatoria" id="senha-aleatoria">
+            </input>
+
+            <button class="copy-text" id="copy-text" onclick="copy()">Copiar</button>
         </div>
 
         <div class="range-opt">
@@ -25,7 +28,7 @@
 
         <div class="options">
             <label>
-                Maiúsculas: <input type="checkbox" class="config" value="caracteresUppercase">
+                Maiúsculas: <input type="checkbox" class="config" value="caracteresUppercase" checked>
             </label>
 
             <label>
@@ -33,7 +36,7 @@
             </label>
 
             <label>
-                Números: <input type="checkbox" class="config" value="number">
+                Números: <input type="checkbox" class="config" value="number" checked>
             </label>
 
             <label>

@@ -34,6 +34,19 @@ h1 {
     h1 {
         font-size: 25px;
     }
+
+    .senha-aleatoria p {
+        font-size: 18px;
+    }
+}
+
+.container-senha {
+    display: flex;
+    gap: 15px;
+}
+
+.copy-text {
+    height: 70px;
 }
 
 .senha-aleatoria {
@@ -48,10 +61,9 @@ h1 {
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-}
-
-.senha-aleatoria > p {
-    font-size: 32px;
+    outline: none;
+    border: none;
+    font-size: 20px;
 }
 
 select,
