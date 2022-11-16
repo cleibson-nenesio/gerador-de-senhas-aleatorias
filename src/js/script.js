@@ -6,7 +6,8 @@ let lastPassword = localStorage.getItem('Last Password')
 let lastRange = parseInt(localStorage.getItem('Last Range'))
 
 let quantiaCaracteres
-divSenha.value = `${lastPassword}`
+
+if(lastPassword) divSenha.value = `${lastPassword}`
 
 setInterval(() => {
     const rangeNumeros = document.getElementById('range-number')
