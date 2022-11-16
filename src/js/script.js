@@ -2,19 +2,18 @@ const divSenha = document.getElementById('senha-aleatoria')
 const icon = document.getElementById('copy-text')
 const theme = document.body
 const switchThemeDot = document.querySelectorAll('.slider')[0]
-
-function changeTheme() {
-    switchThemeDot.classList.toggle('active')
-    theme.classList.toggle('light-mode')
-}
+let lastPassword = localStorage.getItem('Last Password')
+let lastRange = parseInt(localStorage.getItem('Last Range'))
 
 let quantiaCaracteres
+divSenha.value = `${lastPassword}`
 
 setInterval(() => {
     const rangeNumeros = document.getElementById('range-number')
     quantiaCaracteres = document.getElementById('quantidade-caracteres').value
     rangeNumeros.innerText = quantiaCaracteres
 }, 100)
+
 
 const caracteresUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const caracteresLowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -65,6 +64,8 @@ function gerarSenha() {
         }else {
             divSenha.value = `Selecione uma preferência`
         }
+
+        localStorage.setItem('Last Password', `${password}`)
     }
 }
 
@@ -82,4 +83,7 @@ function copy() {
     icon.innerHTML = `<i class="fas fa-check"></i>`
 }
 
-gerarSenha()
+function changeTheme() {
+    switchThemeDot.classList.toggle('active')
+    theme.classList.toggle('light-mode')
+}
