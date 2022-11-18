@@ -7,8 +7,8 @@
         <title>Gerador de Senha Aleatórias</title>
 
         <link rel="stylesheet" href="./src/css/reset.css">
+        <link rel="stylesheet" href="./src/css/variables.css">
         <link rel="stylesheet" href="./src/css/style.css">
-        <link rel="stylesheet" href="./src/css/responsive.css">
 
         <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
 
@@ -18,9 +18,9 @@
     </head>
 
     <body>
-        <input type="checkbox" class="switch-theme" name="switch-theme" id="switch-theme">
-        <span class="slider active" onclick="changeTheme()"></span>
-
+        <div class="mudar-tema" id="mudar-tema">
+            <i class="fa-solid fa-sun"></i>
+        </div>
 
         <div class="main-container">
             <div class="notificacao-de-copiado hidden" id="copy-notification">
@@ -30,7 +30,7 @@
             <h1>Gerador de Senhas Aleatórias</h1>
 
             <div class="container-senha">
-                <input type="text" class="senha-aleatoria" id="senha-aleatoria" placeholder="P4$sW0rD">
+                <input type="text" class="senha-aleatoria" id="senha-aleatoria" placeholder="P4$sW0rD" disabled>
                 </input>
 
                 <button class="copy-text" id="copy-text" onclick="copy()">
@@ -39,31 +39,34 @@
             </div>
 
             <div class="configuracoes">
-                <p class="texto-configuracoes">Comprimento de Senha</p>
+                <div class="selecionar-configuracoes">
+                    <p class="texto-configuracoes">Comprimento de Senha</p>
+                    <i class="fa-sharp fa-solid fa-gear" id="mostrar-configuracoes"></i>
+                </div>
 
                 <div class="range">
-                    <p id="range-number" class="texto-range">8</p><input type="range" name="range" min="4" max="16" value="8" id="quantidade-caracteres" class="range-slide">
+                    <p id="range-number" class="texto-range">08</p><input type="range" name="range" min="4" max="16" value="8" id="quantidade-caracteres" class="range-slide">
                 </div>
 
-                <div class="tipo-de-caracteres">
+                <div class="tipo-de-caracteres hidden" id="tipo-de-caracteres">
                     <label>
-                        <p>Maiúsculas:</p> <input type="checkbox" class="config-caractere" value="caracteresUppercase" checked>
+                        <p>Maiúsculas:</p> <input type="checkbox" class="config-caractere" id="caracteresuppercase" value="uppercase" checked>
                     </label>
 
                     <label>
-                        <p>Minúsculas:</p> <input type="checkbox" class="config-caractere" value="caracteresLowercase">
+                        <p>Minúsculas:</p> <input type="checkbox" class="config-caractere" id="caractereslowercase" value="lowercase" checked>
                     </label>
 
                     <label>
-                        <p>Números:</p> <input type="checkbox" class="config-caractere" value="number" checked>
+                        <p>Números:</p> <input type="checkbox" class="config-caractere" id="numbers" value="numbers" checked>
                     </label>
 
                     <label>
-                        <p>Símbolos:</p> <input type="checkbox" class="config-caractere" value="symbols">
+                        <p>Símbolos:</p> <input type="checkbox" class="config-caractere" id="symbols" value="symbols" checked>
                     </label>
                 </div>
 
-                <button onclick="gerarSenha()" class="botao">Gerar Senha</button>
+                <button id="gerar-senha" class="botao" onclick="gerarSenha()">Gerar Senha</button>
             </div>
         </div>
 
