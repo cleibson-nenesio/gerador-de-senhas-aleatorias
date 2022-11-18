@@ -1,90 +1,83 @@
-const divSenha = document.getElementById('senha-aleatoria')
-const icon = document.getElementById('copy-text')
-const theme = document.body
-const switchThemeDot = document.querySelectorAll('.slider')[0]
-let lastPassword = localStorage.getItem('Last Password')
-let lastRange = parseInt(localStorage.getItem('Last Range'))
+const containerSenha = document.getElementById('senha-aleatoria')
+const quantiaCaracteres = document.getElementById('quantidade-caracteres')
+const mudarTema = document.getElementById('mudar-tema')
+const mostrarConfiguracoes = document.getElementById('mostrar-configuracoes')
 
-let quantiaCaracteres
+mudarTema.addEventListener('click', () => {
+    const tema = document.body
+    const temaAtual = document.body.classList
 
-if(lastPassword) divSenha.value = `${lastPassword}`
+    if(temaAtual == '') 
+    mudarTema.innerHTML = `<i class="fa-solid fa-moon"></i>`
+    
+    if(temaAtual == 'light-mode') 
+    mudarTema.innerHTML = `<i class="fa-solid fa-sun"></i>`
 
-setInterval(() => {
+    tema.classList.toggle('light-mode')
+})
+
+mostrarConfiguracoes.addEventListener('click', () => {
+    const tipoDeCaracteres = document.getElementById('tipo-de-caracteres')
+    tipoDeCaracteres.classList.toggle('hidden')
+})
+
+quantiaCaracteres.addEventListener('change', () => {
     const rangeNumeros = document.getElementById('range-number')
-    quantiaCaracteres = document.getElementById('quantidade-caracteres').value
-    rangeNumeros.innerText = quantiaCaracteres
-}, 100)
 
+    if(quantiaCaracteres.value < 10) {
+        rangeNumeros.innerText = `0${quantiaCaracteres.value}`
+    }else {
+        rangeNumeros.innerText = quantiaCaracteres.value
+    }
+    
+})
 
-const caracteresUppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const caracteresLowercase = 'abcdefghijklmnopqrstuvwxyz'
-const number = '0123456789'
-const symbols = '~`!@#$%^&*()_-+={[}]|;"'
+const maiusculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const minusculas = 'abcdefghijklmnopqrstuvwxyz'
+const numeros = '0123456789'
+const simbolos = '~`!@#$%^&*()_-+={[}]|;"'
 let length
 
 function gerarSenha() {
-    icon.innerHTML = `<i class="fa-regular fa-copy"></i>`
-
     let caracteres = ''
 
-    for(let x = 0; x < 4; x++) {
-        let checkRequirements = document.querySelectorAll('.config-caractere:checked')[x]
+    const configuracoes = document.querySelectorAll('input:checked')
 
-        if(checkRequirements){
-            if(checkRequirements.value == 'caracteresUppercase') {
-                caracteres += caracteresUppercase
-            }
-
-            if(checkRequirements.value == 'caracteresLowercase') {
-                caracteres += caracteresLowercase
-            }
-
-            if(checkRequirements.value == 'number') {
-                caracteres += number
-            }
-
-            if(checkRequirements.value == 'symbols') {
-                caracteres += symbols
-            }
-        }
-        
+    for(let x = 0; x < configuracoes.length;  x++) {
+        if(configuracoes[x].value == 'uppercase') caracteres += maiusculas
+        if(configuracoes[x].value == 'lowercase') caracteres += minusculas
+        if(configuracoes[x].value == 'numbers') caracteres += numeros
+        if(configuracoes[x].value == 'symbols') caracteres += simbolos
     }
 
-    let password = ''
-
     const caracteresLength = caracteres.length
-    length = quantiaCaracteres
+    length = quantiaCaracteres.value
 
+    let password = ''
 
     for(let x = 0; x < length; x++) {
         let randomNumber = Math.floor(Math.random() * caracteresLength)
 
         if(caracteres[randomNumber]) {
             password += caracteres[randomNumber]
-            divSenha.value = `${password}`
+            containerSenha.value = `${password}`
         }else {
-            divSenha.value = `Selecione uma preferência`
+            containerSenha.value = `Selecione uma preferência`
         }
-
-        localStorage.setItem('Last Password', `${password}`)
     }
 }
 
 function copy() {
-    let copyText = divSenha.value
+    let copyText = containerSenha.value
     let copyNotification = document.getElementById('copy-notification')
     navigator.clipboard.writeText(copyText)
 
-    copyNotification.classList.toggle('hidden')
+    const icon = document.getElementById('copy-text')
+    icon.innerHTML = `<i class="fas fa-check"></i>`
 
+    copyNotification.classList.toggle('hidden')
     setTimeout(() => {
         copyNotification.classList.toggle('hidden')
+        icon.innerHTML = `<i class="fa-regular fa-copy"></i>`
     }, 1500)
-
-    icon.innerHTML = `<i class="fas fa-check"></i>`
-}
-
-function changeTheme() {
-    switchThemeDot.classList.toggle('active')
-    theme.classList.toggle('light-mode')
 }
