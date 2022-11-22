@@ -23,17 +23,13 @@
         </div>
 
         <div class="main-container">
-            <div class="notificacao-de-copiado hidden" id="copy-notification">
-                Copiado!
-            </div>
-            
             <h1>Gerador de Senhas Aleatórias</h1>
 
             <div class="container-senha">
                 <input type="text" class="senha-aleatoria" id="senha-aleatoria" placeholder="P4$sW0rD" disabled>
                 </input>
 
-                <button class="copy-text" id="copy-text" onclick="copy()">
+                <button class="copy-text" id="copy-text">
                     <i class="fa-regular fa-copy"></i>
                 </button>
             </div>
@@ -66,11 +62,11 @@
                     </label>
                 </div>
 
-                <button id="gerar-senha" class="botao" onclick="gerarSenha()">Gerar Senha</button>
+                <button id="gerar-senha" class="botao" id="gerar-senha">Gerar Senha</button>
             </div>
         </div>
 
-        <script src="./src/js/script.js"></script>
+        <script src="./src/js/script.js" type="module"></script>
         <script src="https://kit.fontawesome.com/fa140352f1.js" crossorigin="anonymous"></script>
     </body>
 </html>
