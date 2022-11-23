@@ -5,7 +5,7 @@ body {
     align-items: center;
     font-family: 'Domine', serif;
     font-size: 1.6rem;
-    background-color: #08070C;
+    background-color: var(--black);
     color: var(--light-gray);
 }
 
@@ -21,14 +21,14 @@ body {
 
 .light-mode {
     background-color: var(--light-gray);
-    color: #08070C;
+    color: var(--black);
 }
 
 .light-mode .senha-aleatoria,
 .light-mode .configuracoes,
 .light-mode .copy-text {
-    background-color: #8b8a90;
-    color: #08070C;
+    background-color: var(--gray);
+    color: var(--black);
 }
 
 .main-container {
@@ -45,20 +45,6 @@ body {
     margin-bottom: 30px;
 }
 
-.notificacao-de-copiado {
-    height: 30px;
-    width: 100px;
-    background-color: #24232A;
-    box-shadow: 0px 0px 8px -12px rgba(0, 0, 0, .75);
-    position: absolute;
-    top: 100px;
-    right: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-}
-
 .hidden {
     display: none;
 }
@@ -70,7 +56,7 @@ body {
 }
 
 .senha-aleatoria {
-    background-color: #24232A;
+    background-color: var(--dark-gray);
     color: var(--light-gray);
     height: 50px;
     width: 80%;
@@ -83,7 +69,7 @@ body {
 
 .copy-text {
     width: 20%;
-    background-color: #24232A;
+    background-color: var(--dark-gray);
     color: var(--light-green);
     font-size: 2rem;
     border-top-right-radius: 8px;
@@ -92,7 +78,7 @@ body {
 }
 
 .configuracoes {
-    background-color: #24232A;
+    background-color: var(--dark-gray);
     padding: 30px 20px;
     width: 100%;
     text-align: center;
@@ -106,20 +92,17 @@ body {
     margin-bottom: 10px;
 }
 
+.selecionar-configuracoes p {
+    font-size: 1.8rem;
+}
+
 .selecionar-configuracoes i {
     cursor: pointer;
+    transition: 1s ease;
 }
 
 .selecionar-configuracoes i:hover {
-    color: #eae9f1;
-}
-
-.texto-configuracoes {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: flex-start;
+    transform: rotate(180deg);
 }
 
 .range {
@@ -181,7 +164,7 @@ body {
     appearance: none;
     height: 30px;
     width: 30px;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border-radius: 50%;
 }
 
@@ -195,7 +178,7 @@ body {
     background-color: var(--dark-green);
     font-family: 'Domine', serif;
     font-size: 2rem;
-    color: #FFFFFF;
+    color: var(--white);
     border-radius: 5px;
     cursor: pointer;
 }

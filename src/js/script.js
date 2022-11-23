@@ -16,4 +16,4 @@ document.getElementById('gerar-senha').addEventListener('click', () => {
     generatePassword(quantiaCaracteres, containerSenha)
 })
 
-document.getElementById('copy-text').addEventListener('click', () => copyPassword())
+document.getElementById('copy-text').addEventListener('click', () => copyPassword(containerSenha))
