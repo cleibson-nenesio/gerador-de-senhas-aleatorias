@@ -4,10 +4,16 @@ let caracteres = ''
 let password
 
 function generatePassword(amount, container) {
-    verifyConfig()
+    verifyConfig(container)
     generateRandomCaracteres(amount)
 
-    container.value = `${password}`
+    const configuracoes = document.querySelectorAll('input:checked')
+
+    if(configuracoes.length >= 1){
+        container.value = `${password}`
+        return
+    }
+    container.value = 'Selecione uma configuração'
 }
 
 function generateRandomCaracteres(amount) {
@@ -21,9 +27,11 @@ function generateRandomCaracteres(amount) {
     }
 }
 
-function verifyConfig() {
-    const configuracoes = document.querySelectorAll('input:checked')
+function verifyConfig(container) {
+    caracteres = ''
 
+    const configuracoes = document.querySelectorAll('input:checked')
+    
     for(let x = 0; x < configuracoes.length;  x++) {
         if(configuracoes[x].value == 'uppercase') caracteres += maiusculas
         if(configuracoes[x].value == 'lowercase') caracteres += minusculas
